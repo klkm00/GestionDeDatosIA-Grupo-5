@@ -1,6 +1,9 @@
 import os
 from dotenv import load_dotenv
-import psycopg2
+try:
+    import psycopg2
+except ImportError:
+    import psycopg as psycopg2
 
 load_dotenv(override=True)
 
