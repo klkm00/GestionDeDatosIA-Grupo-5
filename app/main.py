@@ -98,7 +98,7 @@ class LoanInput(BaseModel):
 @app.post("/predict-loan")
 def predict_loan(data: LoanInput):
     try:
-        result = run_prediction(data.dict())
+        result = run_prediction(data.model_dump())
         return result
     except Exception as e:
         return {"status": "error", "detail": str(e)}
